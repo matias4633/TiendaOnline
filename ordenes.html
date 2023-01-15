@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Quicksand:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+    <style>
+      :root {
+        --very-light-pink: #c7c7c7;
+        --text-input-field: #f7f7f7;
+        --hospital-green: #acd9b2;
+        --white: #ffffff;
+        --black: #000000;
+        --sm: 14px;
+        --md: 18px;
+        --lg: 18px;
+      }
+      body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        font-family: "Quicksand", sans-serif;
+      }
+      .my-order {
+        width: 100%;
+        height: 100 vh;
+        display: grid;
+        place-items: center;
+      }
+      .title {
+        font-size: var(--lg);
+        margin-bottom: 40px;
+      }
+      .my-order-container {
+        width: 300px;
+      }
+
+      .my-order-content {
+        display: flex;
+        flex-direction: column;
+      }
+      .order {
+        
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 16px;
+        align-items: center;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        justify-items: end;
+      }
+      .order div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+      }
+      .order div:nth-child(1) p{
+        margin:5px 0;
+      }
+      .order p:nth-child(2) {
+        color: var(--very-light-pink);
+      }
+      .order div:nth-child(2) p {
+        font-weight: bold;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <div class="my-order">
+      <div class="my-order-container">
+        <h1 class="title">My order</h1>
+        <div class="my-order-content">
+          <div class="order">
+            <div>
+              <p>04.25.2021</p>
+              <p>6 articles</p>
+            </div>
+
+            <div>
+              <p>$ 560.00</p>
+            </div>
+            <img src="/icons/flechita.svg" alt="">
+          </div>
+        </div>
+        <div class="my-order-content">
+            <div class="order">
+              <div>
+                <p>04.25.2021</p>
+                <p>6 articles</p>
+              </div>
+  
+              <div>
+                <p>$ 560.00</p>
+              </div>
+              <img src="/icons/flechita.svg" alt="">
+            </div>
+          </div>
+          <div class="my-order-content">
+            <div class="order">
+              <div>
+                <p>04.25.2021</p>
+                <p>6 articles</p>
+              </div>
+  
+              <div>
+                <p>$ 560.00</p>
+              </div>
+              <img src="/icons/flechita.svg" alt="">
+            </div>
+          </div>
+          <div class="my-order-content">
+            <div class="order">
+              <div>
+                <p>04.25.2021</p>
+                <p>6 articles</p>
+              </div>
+  
+              <div>
+                <p>$ 560.00</p>
+              </div>
+              <img src="/icons/flechita.svg" alt="">
+            </div>
+          </div>
+          <div class="my-order-content">
+            <div class="order">
+              <div>
+                <p>04.25.2021</p>
+                <p>6 articles</p>
+              </div>
+  
+              <div>
+                <p>$ 560.00</p>
+              </div>
+              <img src="/icons/flechita.svg" alt="">
+            </div>
+          </div>
+          <div class="my-order-content">
+            <div class="order">
+              <div>
+                <p>04.25.2021</p>
+                <p>6 articles</p>
+              </div>
+  
+              <div>
+                <p>$ 560.00</p>
+              </div>
+              <img src="/icons/flechita.svg" alt="">
+            </div>
+          </div>
+        
+      </div>
+      
+    </div>
+    
+  </body>
+</html>
