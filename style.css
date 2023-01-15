@@ -220,6 +220,8 @@ nav {
   background-color: var(--white);
   width: 640px;
   padding: 20px 10px;
+  border: 1px solid var(--very-light-pink);
+  border-radius: 12px;
 }
 
 .my-order-content {
