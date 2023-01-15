@@ -20,12 +20,12 @@
       <div class="izquierda">
         <img src="/logos/logo_yard_sale.svg" alt="logo" class="logo" />
         <ul>
-          <li><a href="http://"> All</a></li>
-          <li><a href="http://"> Clothes</a></li>
-          <li><a href="http://"> Electronics</a></li>
-          <li><a href="http://"> Furniture</a></li>
-          <li><a href="http://"> Toys</a></li>
-          <li><a href="http://"> Others</a></li>
+          <li onclick=todas()><a> All</a></li>
+          <li onclick=ropahombre()><a> Men's clothes</a></li>
+          <li onclick=ropamujer()><a> Women's clothes</a></li>
+          <li onclick=electronicos()><a> Electronics</a></li>
+          <li onclick=joyas()><a>Jewelery</a></li>
+          <li><a> Others</a></li>
         </ul>
       </div>
       <div class="derecha">
@@ -34,20 +34,20 @@
           <li class="flechita"><img src="/icons/flechita.svg" alt="" /></li>
           <li class="carrito">
             <img src="/icons/icon_shopping_cart.svg" alt="" />
-            <div class="cantidad">2</div>
+            <div class="cantidad">0</div>
           </li>
         </ul>
       </div>
       <div class="desktop-menu oculto">
         <ul>
           <li>
-            <a href="/" class="title">My orders</a>
+            <a href="/ordenes.html" class="title">My orders</a>
           </li>
           <li>
-            <a href="/" class="title">My Account</a>
+            <a href="/editarCuenta.html" class="title">My Account</a>
           </li>
           <li>
-            <a href="/" class="title">Sign out</a>
+            <a href="/login.html" class="title">Sign out</a>
           </li>
         </ul>
       </div>
@@ -78,10 +78,10 @@
           </ul>
           <ul>
             <li>
-              <a href="/">My orders</a>
+              <a href="/ordenes.html">My orders</a>
             </li>
             <li>
-              <a href="/">My account</a>
+              <a href="/editarCuenta.html">My account</a>
             </li>
           </ul>
         </div>
@@ -91,7 +91,7 @@
             <a href="/" class="emailmenu">example@gmail.com</a>
           </li>
           <li>
-            <a href="/" class="sign-out">Sign out</a>
+            <a href="/login.html" class="sign-out">Sign out</a>
           </li>
         </ul>
       </div>
@@ -104,63 +104,19 @@
         </div>
         <div class="caja">
           <div class="contenedor">
-            <div class="shopping-cart">
-              <figure>
-                <img
-                  src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt=""
-                />
-              </figure>
-              <p>Bike</p>
-              <p>$ 120,00</p>
-              <img src="/icons/icon_close.png" alt="" />
-            </div>
-            <div class="shopping-cart">
-              <figure>
-                <img
-                  src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt=""
-                />
-              </figure>
-              <p>Bike</p>
-              <p>$ 120,00</p>
-              <img src="/icons/icon_close.png" alt="" />
-            </div>
-            <div class="shopping-cart">
-              <figure>
-                <img
-                  src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt=""
-                />
-              </figure>
-              <p>Bike</p>
-              <p>$ 120,00</p>
-              <img src="/icons/icon_close.png" alt="" />
-            </div>
-            <div class="shopping-cart">
-              <figure>
-                <img
-                  src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt=""
-                />
-              </figure>
-              <p>Bike</p>
-              <p>$ 120,00</p>
-              <img src="/icons/icon_close.png" alt="" />
-            </div>
-
-            <div class="my-order-content">
-              <div class="order">
-                <div>
-                  <p>Total</p>
-                </div>
-                <div>
-                  <p>$560.00</p>
-                </div>
+          </div>
+          <div class="my-order-content">
+            <div class="order">
+              <div>
+                <p>Total</p>
+              </div>
+              <div>
+                <p class="total">$ 0</p>
               </div>
             </div>
             <button class="primary-button">Checkout</button>
           </div>
+          
         </div>
       </div>
     </div>
@@ -192,6 +148,7 @@
     </div>
     
     <section class="main-container">
+      <span class="loader oculto "></span>
       <div class="cards-conteiner"></div>
     </section>
    
