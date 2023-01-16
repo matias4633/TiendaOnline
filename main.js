@@ -216,7 +216,7 @@ function agregarAlCarrito(producto){
     precio.innerText='$ '+producto.price;
 
     const eliminar=document.createElement('img');
-    eliminar.setAttribute('src','/icons/icon_close.png');
+    eliminar.setAttribute('src','./icons/icon_close.png');
     eliminar.addEventListener('click',
         ()=>{
                shoppingCart.remove();
