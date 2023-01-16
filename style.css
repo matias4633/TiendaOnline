@@ -137,6 +137,7 @@ nav {
   border: 1px solid var(--very-light-pink);
   border-radius: 6px;
   padding: 20px 20px 0 20px;
+  z-index: 1;
 }
 
 .desktop-menu ul {
@@ -219,7 +220,14 @@ nav {
   display: grid;
   place-items: center;
   justify-items: end;
+  transform: translateX(0px);
+  transition: transform 2s ;
 }
+.my-order-mostrar{
+  transform: translateX(-670px);
+  transition: transform 2s ;
+}
+
 
 .caja {
   display: flex;
@@ -229,7 +237,8 @@ nav {
 
 .contenedor {
   width: 90%;
-
+  max-height: 300px;
+  overflow-y: scroll;
 
 }
 
@@ -240,7 +249,7 @@ nav {
 
 .my-order {
   position: absolute;
-  right: 0;
+  right: -670px;
 }
 
 .my-order-container {
@@ -495,7 +504,9 @@ nav {
     margin-right: 29%;
     margin-left: 32px
   }
-
+  .my-order {
+    width: 95%;
+  }
   .my-order-container {
     width: 100%;
   }

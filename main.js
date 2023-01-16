@@ -240,8 +240,8 @@ function recordarCarrito(productos){
 
 email.addEventListener('click',
     () => {
-        if (!carrito.classList.contains('oculto')) {
-            toggleElemento(carrito);
+        if (carrito.classList.contains('my-order-mostrar')) {
+            carrito.classList.remove('my-order-mostrar');
         }
         if (!detallesProducto.classList.contains('oculto')) {
             toggleElemento(detallesProducto);
@@ -250,8 +250,8 @@ email.addEventListener('click',
     });
 boton_menu_movil.addEventListener('click',
     () => {
-        if (!carrito.classList.contains('oculto')) {
-            toggleElemento(carrito);
+        if (carrito.classList.contains('my-order-mostrar')) {
+            carrito.classList.remove('my-order-mostrar');
         }
         if (!detallesProducto.classList.contains('oculto')) {
             toggleElemento(detallesProducto);
@@ -270,7 +270,12 @@ boton_carrito.addEventListener('click',
         if (!detallesProducto.classList.contains('oculto')) {
             toggleElemento(detallesProducto);
         }
-        toggleElemento(carrito)
+        if(!carrito.classList.contains('my-order-mostrar')){
+            carrito.classList.add('my-order-mostrar');
+        }else{
+            carrito.classList.remove('my-order-mostrar');
+        }
+        
     });
 
 botonCerrarDetalles.addEventListener('click',
