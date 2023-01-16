@@ -20,20 +20,20 @@
       <div class="izquierda">
         <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo" />
         <ul>
-          <li onclick=todas()><a> All</a></li>
-          <li onclick=ropahombre()><a> Men's clothes</a></li>
-          <li onclick=ropamujer()><a> Women's clothes</a></li>
-          <li onclick=electronicos()><a> Electronics</a></li>
-          <li onclick=joyas()><a>Jewelery</a></li>
+          <li onclick="todas()"><a> All</a></li>
+          <li onclick="ropahombre()"><a> Men's clothes</a></li>
+          <li onclick="ropamujer()"><a> Women's clothes</a></li>
+          <li onclick="electronicos()"><a> Electronics</a></li>
+          <li onclick="joyas()"><a>Jewelery</a></li>
           <li><a> Others</a></li>
         </ul>
       </div>
       <div class="derecha">
         <ul>
           <li><p class="email">matias@gmail.com</p></li>
-          <li class="flechita"><img src="/icons/flechita.svg" alt="" /></li>
+          <li class="flechita"><img src="./icons/flechita.svg" alt="" /></li>
           <li class="carrito">
-            <img src="/icons/icon_shopping_cart.svg" alt="" />
+            <img src="./icons/icon_shopping_cart.svg" alt="" />
             <div class="cantidad">0</div>
           </li>
         </ul>
@@ -54,27 +54,12 @@
       <div class="mobile-menu oculto">
         <div>
           <ul>
-            <li>
-              <a href="/">CATEGORIES</a>
-            </li>
-            <li>
-              <a href="/">All</a>
-            </li>
-            <li>
-              <a href="/">Clothes</a>
-            </li>
-            <li>
-              <a href="/">Electronics</a>
-            </li>
-            <li>
-              <a href="/">Furnitures</a>
-            </li>
-            <li>
-              <a href="/">Toys</a>
-            </li>
-            <li>
-              <a href="/">Others</a>
-            </li>
+            <li onclick="todas()"><a> All</a></li>
+            <li onclick="ropahombre()"><a> Men's clothes</a></li>
+            <li onclick="ropamujer()"><a> Women's clothes</a></li>
+            <li onclick="electronicos()"><a> Electronics</a></li>
+            <li onclick="joyas()"><a>Jewelery</a></li>
+            <li><a> Others</a></li>
           </ul>
           <ul>
             <li>
@@ -99,12 +84,11 @@
     <div class="my-order oculto">
       <div class="my-order-container">
         <div class="superior">
-          <img src="/icons/flechita.svg" alt="flecha" class="flecha" />
+          <img src="./icons/flechita.svg" alt="flecha" class="flecha" />
           <h1 class="title">Shopping cart</h1>
         </div>
         <div class="caja">
-          <div class="contenedor">
-          </div>
+          <div class="contenedor"></div>
           <div class="my-order-content">
             <div class="order">
               <div>
@@ -116,42 +100,40 @@
             </div>
             <button class="primary-button">Checkout</button>
           </div>
-          
         </div>
       </div>
     </div>
-    <div class="detalle-producto oculto ">
+    <div class="detalle-producto oculto">
       <aside class="producto">
-        <img class="cerrar" src="/icons/icon_close.png" alt="close" />
+        <img class="cerrar" src="./icons/icon_close.png" alt="close" />
         <img
           src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
           alt=""
         />
         <div class="info">
           <div class="product-info-detalles">
-              <p>$120,00</p>
-              <p>Brike</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id
-                voluptates, recusandae consectetur deleniti a ratione debitis quidem
-                incidunt autem quas amet natus tempore harum vitae nisi maiores quam
-                est? Vel.
-              </p>
-            </div>
-            <button class="primary-button primary-button-detalles">
-              <img src="./icons/bt_add_to_cart.svg" alt="add to card" />
-              Add to card
-            </button>
+            <p>$120,00</p>
+            <p>Brike</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id
+              voluptates, recusandae consectetur deleniti a ratione debitis
+              quidem incidunt autem quas amet natus tempore harum vitae nisi
+              maiores quam est? Vel.
+            </p>
+          </div>
+          <button class="primary-button primary-button-detalles">
+            <img src="./icons/bt_add_to_cart.svg" alt="add to card" />
+            Add to card
+          </button>
         </div>
-        
       </aside>
     </div>
-    
+
     <section class="main-container">
-      <span class="loader oculto "></span>
+      <span class="loader oculto"></span>
       <div class="cards-conteiner"></div>
     </section>
-   
+
     <script src="./main.js"></script>
   </body>
 </html>

@@ -27,7 +27,7 @@ function renderDetalles(producto) {
     aside.classList.add('producto');
     const cerrar=document.createElement('img');
     cerrar.classList.add('cerrar');
-    cerrar.setAttribute('src','/icons/icon_close.png');
+    cerrar.setAttribute('src','./icons/icon_close.png');
     cerrar.addEventListener('click',
         () => {
             toggleElemento(detallesProducto);
