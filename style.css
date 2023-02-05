@@ -203,6 +203,7 @@ nav {
 
 .mobile-menu ul li {
   margin-bottom: 24px;
+  cursor: pointer;
 }
 
 .emailmenu {

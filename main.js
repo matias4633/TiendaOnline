@@ -54,6 +54,10 @@ function renderDetalles(producto) {
     const boton = document.createElement('button');
     boton.className = 'primary-button primary-button-detalles';
     boton.innerHTML = 'Add to card';
+    boton.addEventListener('click', () => {
+        agregarAlCarrito(producto);
+        toggleElemento(detallesProducto);
+    });
     const icono = document.createElement('img');
     icono.setAttribute('src', './icons/bt_add_to_cart.svg');
 
@@ -144,6 +148,7 @@ function todas() {
             toggleElemento(loader);
             renderProductos(json);
         })
+    toggleElemento(menu_movil);
 }
 function ropahombre() {
     borrarProductos();
@@ -154,6 +159,7 @@ function ropahombre() {
             toggleElemento(loader);
             renderProductos(json);
         })
+    toggleElemento(menu_movil);
 }
 function ropamujer() {
     borrarProductos();
@@ -164,6 +170,7 @@ function ropamujer() {
             toggleElemento(loader);
             renderProductos(json);
         })
+    toggleElemento(menu_movil);
 }
 function joyas() {
     borrarProductos();
@@ -174,6 +181,7 @@ function joyas() {
             toggleElemento(loader);
             renderProductos(json);
         })
+    toggleElemento(menu_movil);
 }
 function electronicos() {
     borrarProductos();
@@ -184,6 +192,7 @@ function electronicos() {
             toggleElemento(loader);
             renderProductos(json);
         })
+    toggleElemento(menu_movil);
 }
 function actualizarTotal(sumar, producto) {
     let valor = Math.floor(producto.price * 100);
@@ -296,17 +305,17 @@ botonCerrarDetalles.addEventListener('click',
 let updating = false
 
 const handleScroll = () => {
-    if (window.scrollY > 80 || window.pageYOffset > 80){
+    if (window.scrollY > 80 || window.pageYOffset > 80) {
         detallesProducto.classList.add('detalle-productoFixed');
     }
-    else{
+    else {
         detallesProducto.classList.remove('detalle-productoFixed');
     }
     updating = false
 }
 
 window.onscroll = () => {
-    if (!updating){
+    if (!updating) {
         updating = true;
         requestAnimationFrame(handleScroll);
         //Es una funcion de que pertenece al window, recibe una callback a ejecutar cuando ejecutar un repintado.
