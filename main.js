@@ -7,13 +7,14 @@ const carrito = document.querySelector('.my-order');
 const cardsConteiner = document.querySelector('.cards-conteiner');
 const botonCerrarDetalles = document.querySelector('.cerrar');
 const detallesProducto = document.querySelector('.detalle-producto ');
-const loader=document.querySelector('.loader');
-const contenedorCarrito=document.querySelector('.contenedor');
-const totalRender=document.querySelector('.total');
-const cantEnCarrito=document.querySelector('.cantidad');
+const loader = document.querySelector('.loader');
+const contenedorCarrito = document.querySelector('.contenedor');
+const totalRender = document.querySelector('.total');
+const cantEnCarrito = document.querySelector('.cantidad');
+const contenedorTarjetas = document.querySelector('.main-container');
 
-let total=0;
-let productosEnCarrito=[];
+let total = 0;
+let productosEnCarrito = [];
 
 
 function toggleElemento(elemento) {
@@ -25,13 +26,13 @@ function openElemento(elemento) {
 function renderDetalles(producto) {
     const aside = document.createElement('aside');
     aside.classList.add('producto');
-    const cerrar=document.createElement('img');
+    const cerrar = document.createElement('img');
     cerrar.classList.add('cerrar');
-    cerrar.setAttribute('src','./icons/icon_close.png');
+    cerrar.setAttribute('src', './icons/icon_close.png');
     cerrar.addEventListener('click',
         () => {
             toggleElemento(detallesProducto);
-            while(detallesProducto.firstChild){
+            while (detallesProducto.firstChild) {
                 detallesProducto.removeChild(detallesProducto.firstChild);
             }
         }
@@ -44,18 +45,18 @@ function renderDetalles(producto) {
     const productoInfoDetalles = document.createElement('div');
     productoInfoDetalles.classList.add('product-info-detalles');
     const precio = document.createElement('p');
-    precio.innerText ='$' +producto.price;
+    precio.innerText = '$' + producto.price;
     const nombre = document.createElement('p');
     nombre.innerText = producto.title;
     const descripcion = document.createElement('p');
     descripcion.classList.add('descrip');
     descripcion.innerText = producto.description;
     const boton = document.createElement('button');
-    boton.className='primary-button primary-button-detalles';
-    boton.innerHTML='Add to card';
+    boton.className = 'primary-button primary-button-detalles';
+    boton.innerHTML = 'Add to card';
     const icono = document.createElement('img');
     icono.setAttribute('src', './icons/bt_add_to_cart.svg');
-    
+
     boton.appendChild(icono);
     productoInfoDetalles.appendChild(precio);
     productoInfoDetalles.appendChild(nombre);
@@ -70,7 +71,7 @@ function renderDetalles(producto) {
 
 }
 function renderProductos(array) {
-    
+
     array.forEach(producto => {
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
@@ -88,7 +89,7 @@ function renderProductos(array) {
             if (!desktopmenu.classList.contains('oculto')) {
                 toggleElemento(desktopmenu);
             }
-            while(detallesProducto.firstChild){
+            while (detallesProducto.firstChild) {
                 detallesProducto.removeChild(detallesProducto.firstChild);
             }
             renderDetalles(producto);
@@ -110,8 +111,9 @@ function renderProductos(array) {
         const figure = document.createElement('figure');
 
         const icono = document.createElement('img');
+        icono.classList.add('icono-carrito');
         icono.setAttribute('src', './icons/bt_add_to_cart.svg');
-        icono.addEventListener('click',()=>{
+        icono.addEventListener('click', () => {
             agregarAlCarrito(producto);
         });
 
@@ -127,100 +129,100 @@ function renderProductos(array) {
 
     });
 }
-function borrarProductos(){
-    while(cardsConteiner.firstChild){
+function borrarProductos() {
+    while (cardsConteiner.firstChild) {
         cardsConteiner.removeChild(cardsConteiner.firstChild);
     }
 }
-function todas(){
+function todas() {
     borrarProductos();
     toggleElemento(loader);
     fetch('https://fakestoreapi.com/products')
-            .then(res=>res.json())
-            .then(json=>{
-                console.log(json);
-                toggleElemento(loader);
-                renderProductos(json);
-            } )
+        .then(res => res.json())
+        .then(json => {
+            console.log(json);
+            toggleElemento(loader);
+            renderProductos(json);
+        })
 }
-function ropahombre(){
+function ropahombre() {
     borrarProductos();
     toggleElemento(loader);
     fetch("https://fakestoreapi.com/products/category/men's%20clothing")
-            .then(res=>res.json())
-            .then(json=>{
-                toggleElemento(loader);
-                renderProductos(json);
-            })
+        .then(res => res.json())
+        .then(json => {
+            toggleElemento(loader);
+            renderProductos(json);
+        })
 }
-function ropamujer(){
+function ropamujer() {
     borrarProductos();
     toggleElemento(loader);
     fetch("https://fakestoreapi.com/products/category/women's%20clothing")
-            .then(res=>res.json())
-            .then(json=>{
-                toggleElemento(loader);
-                renderProductos(json);
-            })
+        .then(res => res.json())
+        .then(json => {
+            toggleElemento(loader);
+            renderProductos(json);
+        })
 }
-function joyas(){
+function joyas() {
     borrarProductos();
     toggleElemento(loader);
     fetch('https://fakestoreapi.com/products/category/jewelery')
-            .then(res=>res.json())
-            .then(json=>{
-                toggleElemento(loader);
-                renderProductos(json);
-            } )
+        .then(res => res.json())
+        .then(json => {
+            toggleElemento(loader);
+            renderProductos(json);
+        })
 }
-function electronicos(){
+function electronicos() {
     borrarProductos();
     toggleElemento(loader);
     fetch('https://fakestoreapi.com/products/category/electronics')
-            .then(res=>res.json())
-            .then(json=>{
-                toggleElemento(loader);
-                renderProductos(json);
-            })
+        .then(res => res.json())
+        .then(json => {
+            toggleElemento(loader);
+            renderProductos(json);
+        })
 }
-function actualizarTotal(sumar,producto){
-    let valor=Math.floor(producto.price*100);
-    let aux=Math.floor(total*100);
-    if(sumar){
-        aux+=valor;
+function actualizarTotal(sumar, producto) {
+    let valor = Math.floor(producto.price * 100);
+    let aux = Math.floor(total * 100);
+    if (sumar) {
+        aux += valor;
         productosEnCarrito.push(producto);
-        localStorage.setItem('carrito',JSON.stringify(productosEnCarrito));
-    }else{
-        aux-=valor;
-        productosEnCarrito=productosEnCarrito.filter((objeto)=>objeto.hash!==producto.hash);
-        localStorage.setItem('carrito',JSON.stringify(productosEnCarrito));
+        localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
+    } else {
+        aux -= valor;
+        productosEnCarrito = productosEnCarrito.filter((objeto) => objeto.hash !== producto.hash);
+        localStorage.setItem('carrito', JSON.stringify(productosEnCarrito));
     }
-    total=aux/100;
-    cantEnCarrito.innerText=productosEnCarrito.length;
-    totalRender.innerText='$ '+total;
+    total = aux / 100;
+    cantEnCarrito.innerText = productosEnCarrito.length;
+    totalRender.innerText = '$ ' + total;
 }
-function agregarAlCarrito(producto){
-    producto.hash=Math.floor(Math.random() * 100)*Date.now();
+function agregarAlCarrito(producto) {
+    producto.hash = Math.floor(Math.random() * 100) * Date.now();
 
-    const shoppingCart=document.createElement('div');
+    const shoppingCart = document.createElement('div');
     shoppingCart.classList.add('shopping-cart');
 
-    const figure=document.createElement('figure');
-    const img=document.createElement('img');
-    img.setAttribute('src',producto.image);
+    const figure = document.createElement('figure');
+    const img = document.createElement('img');
+    img.setAttribute('src', producto.image);
 
-    const nombre=document.createElement('p');
-    nombre.innerText=producto.title;
+    const nombre = document.createElement('p');
+    nombre.innerText = producto.title;
 
-    const precio=document.createElement('p');
-    precio.innerText='$ '+producto.price;
+    const precio = document.createElement('p');
+    precio.innerText = '$ ' + producto.price;
 
-    const eliminar=document.createElement('img');
-    eliminar.setAttribute('src','./icons/icon_close.png');
+    const eliminar = document.createElement('img');
+    eliminar.setAttribute('src', './icons/icon_close.png');
     eliminar.addEventListener('click',
-        ()=>{
-               shoppingCart.remove();
-               actualizarTotal(false,producto);
+        () => {
+            shoppingCart.remove();
+            actualizarTotal(false, producto);
         });
 
     figure.appendChild(img);
@@ -230,12 +232,15 @@ function agregarAlCarrito(producto){
     shoppingCart.appendChild(eliminar);
 
     contenedorCarrito.appendChild(shoppingCart);
-    
-    actualizarTotal(true,producto);
+
+    actualizarTotal(true, producto);
 
 }
-function recordarCarrito(productos){
-    productos.forEach((producto)=>{agregarAlCarrito(producto)});
+function recordarCarrito(productos) {
+    productos.forEach((producto) => { agregarAlCarrito(producto) });
+}
+function cerrarTodo() {
+
 }
 
 email.addEventListener('click',
@@ -270,22 +275,44 @@ boton_carrito.addEventListener('click',
         if (!detallesProducto.classList.contains('oculto')) {
             toggleElemento(detallesProducto);
         }
-        if(!carrito.classList.contains('my-order-mostrar')){
+        if (!carrito.classList.contains('my-order-mostrar')) {
             carrito.classList.add('my-order-mostrar');
-        }else{
+            carrito.classList.remove('oculto');
+        } else {
             carrito.classList.remove('my-order-mostrar');
         }
-        
+
     });
 
 botonCerrarDetalles.addEventListener('click',
     () => {
         toggleElemento(detallesProducto);
-        while(detallesProducto.firstChild){
+        while (detallesProducto.firstChild) {
             detallesProducto.removeChild(detallesProducto.firstChild);
         }
     }
 );
+//Esta parte maneja el scroll para saber cuando poder en fixed el detalle de producto.
+let updating = false
+
+const handleScroll = () => {
+    if (window.scrollY > 80 || window.pageYOffset > 80){
+        detallesProducto.classList.add('detalle-productoFixed');
+    }
+    else{
+        detallesProducto.classList.remove('detalle-productoFixed');
+    }
+    updating = false
+}
+
+window.onscroll = () => {
+    if (!updating){
+        updating = true;
+        requestAnimationFrame(handleScroll);
+        //Es una funcion de que pertenece al window, recibe una callback a ejecutar cuando ejecutar un repintado.
+    }
+}
+//fin 
 
 const productos = [];
 /* for (let index = 0; index < 8; index++) {
